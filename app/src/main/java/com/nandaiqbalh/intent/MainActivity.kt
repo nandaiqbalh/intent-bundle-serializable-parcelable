@@ -3,7 +3,6 @@ package com.nandaiqbalh.intent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity.apply
 import com.nandaiqbalh.intent.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +17,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnImplicit.setOnClickListener {
             implicitIntent()
+        }
+
+        binding.btnExplicit.setOnClickListener {
+
+            val toBaseIntent = Intent(this@MainActivity, BaseActivity::class.java)
+            startActivity(toBaseIntent)
+
         }
     }
 
