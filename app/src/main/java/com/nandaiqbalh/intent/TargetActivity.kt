@@ -14,8 +14,16 @@ class TargetActivity : AppCompatActivity() {
         _binding = ActivityTargetBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // data
+        binding.tv1.text = intent.getStringExtra("data")
 
-            binding.tv1.text = intent.getStringExtra("data")
+        // bundle
+        val bundle = intent.extras
+        binding.tv1.text = bundle?.getString("edt_satu")
+        binding.tvDua.text = bundle?.getInt("integer").toString()
+        binding.tvTiga.text = bundle?.getDouble("double").toString()
+        binding.tvEmpat.text = bundle?.getString("string")
+        binding.tvLima.text = bundle?.getBoolean("boolean").toString()
 
     }
 

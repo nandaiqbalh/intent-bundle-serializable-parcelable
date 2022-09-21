@@ -27,6 +27,26 @@ class BaseActivity : AppCompatActivity() {
             startActivity(dataIntent)
         }
 
+        binding.btnBundle.setOnClickListener {
+
+            val stringInput = binding.edtTeks.text.toString()
+
+            val bundleIntent = Intent(this@BaseActivity, TargetActivity::class.java)
+
+            // declare bundle
+            val bundle = Bundle()
+
+            bundle.putString("edt_satu", stringInput)
+            bundle.putInt("integer", 12)
+            bundle.putDouble("double", 12.2)
+            bundle.putString("string", "Nanda")
+            bundle.putBoolean("boolean", true)
+
+            bundleIntent.putExtras(bundle)
+            startActivity(bundleIntent)
+
+        }
+
     }
 
     override fun onDestroy() {
