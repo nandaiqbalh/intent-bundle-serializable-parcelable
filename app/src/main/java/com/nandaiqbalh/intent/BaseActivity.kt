@@ -47,6 +47,18 @@ class BaseActivity : AppCompatActivity() {
 
         }
 
+        binding.btnSerializable.setOnClickListener {
+
+            val serializableIntent = Intent(this@BaseActivity, TargetActivity::class.java)
+            val person1 = Person("Nanda", "nanda@gmail.com")
+            val person2 = Person("Iqbal", "iqbal@gmail.com")
+
+            serializableIntent.putExtra("OBJECT_1", person1)
+            serializableIntent.putExtra("OBJECT_2", person2)
+
+            startActivity(serializableIntent)
+        }
+
     }
 
     override fun onDestroy() {
