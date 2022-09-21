@@ -59,6 +59,16 @@ class BaseActivity : AppCompatActivity() {
             startActivity(serializableIntent)
         }
 
+        // parcelable
+        binding.btnParcelable.setOnClickListener {
+            val parcelableIntent = Intent(this@BaseActivity, TargetActivity::class.java)
+
+            val dataStudent1 = Student("Nanda", 12)
+            parcelableIntent.putExtra("student", dataStudent1)
+
+            startActivity(parcelableIntent)
+        }
+
     }
 
     override fun onDestroy() {

@@ -39,6 +39,14 @@ class TargetActivity : AppCompatActivity() {
             binding.tvDua.text = "Hi ${person2.name}, email kamu adalah ${person2.email}!"
         }
 
+        // parcelable
+        intent.getParcelableExtra<Student>("student")?.let {
+            val student1 = intent.getParcelableExtra<Student>("student")
+
+            binding.tvEmpat.text = "Namaku ${student1!!.name}"
+            binding.tvLima.text ="Umurku ${student1!!.age}"
+        }
+
     }
 
     override fun onDestroy() {
